@@ -66,6 +66,7 @@
         "defaults"
     ],
     "config": {
+        "commento_url": "https://commento.gostew.art",
         "posts_per_page": 25,
         "image_sizes": {
             "xxs": {
