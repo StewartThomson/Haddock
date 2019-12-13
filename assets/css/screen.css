@@ -3272,7 +3272,7 @@ textarea:focus {
 .checkout-form {
     width: 100%;
     max-width: 700px;
-    margin: 0 auto 10vw;
+    margin: 64px auto 10vw;
     text-align: center;
 }
 
