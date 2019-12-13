@@ -34,7 +34,13 @@
         {{/if}}
 
         {{#if @labs.members}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+            {{#if @member}}
+                <a class="account-link" href="/account/">Account</a>
+                <a class="button small header-cta signout-link" href="#signout" data-members-signout>Log out</a>
+            {{else}}
+                <a class="subscribe-button" href="/signin/">Log in</a>
+                <a class="button primary small header-cta" href="/signup/">Subscribe</a>
+            {{/if}}
         {{/if}}
     </div>
 </nav>
