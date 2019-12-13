@@ -3664,3 +3664,7 @@ form[data-members-form].error .message-error {
         flex-direction: column;
     }
 }
+
+.commento-logo-container {
+    display: none;
+}
