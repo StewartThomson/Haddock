@@ -1,19 +1,27 @@
 <section class="subscribe-form">
-    <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-    <p class="subscribe-form-description">Get the latest posts delivered right to your inbox</p>
+    {{#if @member}}
+        <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
+    {{else}}
+        <h3 class="subscribe-form-title">Sign Up & Subscribe to {{@site.title}}</h3>
+    {{/if}}
+    <p class="subscribe-form-description">Get private assistance in the GoStew Slack</p>
     <form data-members-form="subscribe">
-        <div class="form-group">
-            <input class="subscribe-email" data-members-email placeholder="youremail@example.com" autocomplete="false" />
-            <button class="button primary" type="submit">
-                <span class="button-content">Subscribe</span>
-                <span class="button-loader">{{> "icons/loader"}}</span>
-            </button>
-        </div>
-        <div class="message-success">
-            <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
-        </div>
-        <div class="message-error">
-            Please enter a valid email address!
-        </div>
+        {{#if @member}}
+            <a class="button primary" href="/signup/">Subscribe</a>
+        {{else}}
+            <div class="form-group">
+                <input class="subscribe-email" data-members-email placeholder="youremail@example.com" autocomplete="false" />
+                <button class="button primary" type="submit">
+                    <span class="button-content">Subscribe</span>
+                    <span class="button-loader">{{> "icons/loader"}}</span>
+                </button>
+            </div>
+            <div class="message-success">
+                <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+            </div>
+            <div class="message-error">
+                Please enter a valid email address!
+            </div>
+        {{/if}}
     </form>
 </section>
