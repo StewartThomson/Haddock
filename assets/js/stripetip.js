@@ -25,14 +25,14 @@ $(document).ready(function() {
 Array.prototype.forEach.call(document.querySelectorAll('[data-stripe-tip]'), function (el) {
 	var errorEl = el.querySelector('[data-members-error]');
 	function clickHandler(event) {
-		var amount = document.getElementById("tip-input").value;
+		var amount = document.getElementById("tip-input").value * 100;
 		el.removeEventListener('click', clickHandler);
 		event.preventDefault();
 
 		var successUrl = el.dataset.membersSuccess;
 		var cancelUrl = el.dataset.membersCancel;
-		var checkoutSuccessUrl;
-		var checkoutCancelUrl;
+		var checkoutSuccessUrl = window.location.href;
+		var checkoutCancelUrl = window.location.href;
 
 		if (successUrl) {
 			checkoutSuccessUrl = (new URL(successUrl, window.location.href)).href;
