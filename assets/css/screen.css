@@ -3668,3 +3668,7 @@ form[data-members-form].error .message-error {
 .commento-logo-container {
     display: none;
 }
+
+.checkout-plan {
+    min-width: 227px;
+}

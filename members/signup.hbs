@@ -11,13 +11,27 @@
         {{!-- Logged in, paying member: Redirect home --}}
             <script>window.location = '{{@site.url}}';</script>
 
-        {{else if @member}}
+        {{else if true}}
 
         {{!-- Logged in, not paying: Check out --}}
             <div class="checkout-form">
                 <h1 class="checkout-title">Choose your subscription</h1>
                 <p>{{@site.title}} will always have free posts. If you want first hand help, consider subscribing</p>
                 <div class="checkout-box">
+                    <div class="checkout-plan">
+                        <header class="checkout-plan-header">
+                            <h3>One time tip</h3>
+                            <input id="tip-input" class="currency" type="number" min="0.01" step="0.01" max="100" value="1.00" />
+                        </header>
+                        <div class="checkout-plan-content">
+                            <ul>
+                                <li>Help me keep these guides alive</li>
+                                <li>Support independent publishing</li>
+                                <li>Simple, secure card payment</li>
+                            </ul>
+                            <a class="button primary fit" href="javascript:" data-stripe-tip="">Send a tip</a>
+                        </div>
+                    </div>
                     <div class="checkout-plan">
                         <header class="checkout-plan-header">
                             <h3>Monthly</h3>
